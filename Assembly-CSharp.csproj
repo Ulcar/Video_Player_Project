@@ -64,6 +64,7 @@
     <Compile Include="Assets\Comment.cs" />
     <Compile Include="Assets\CommentManager.cs" />
     <Compile Include="Assets\CommentTest.cs" />
+    <Compile Include="Assets\FFMPEGCaller.cs" />
     <Compile Include="Assets\MemeManager.cs" />
     <Compile Include="Assets\MemeScroller.cs" />
     <Compile Include="Assets\SocketServer.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\ViveMediaDecoder\Scripts\UVSphere.cs" />
     <Compile Include="Assets\ViveMediaDecoder\Scripts\ViveMediaDecoder.cs" />
     <Compile Include="Assets\webTest.cs" />
+    <Compile Include="Assets\YoutubeDLCaller.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\ViveMediaDecoder\readme.txt" />
@@ -103,7 +105,10 @@
     <None Include="Assets\ViveMediaDecoder\Shaders\YUV2RGBA.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\youtube-dl\test\testdata\cookies\session_cookies.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\youtube-dl\test\testdata\cookies\httponly_cookies.txt" />
+    <None Include="Assets\youtube-dl\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

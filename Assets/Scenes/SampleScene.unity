@@ -6054,7 +6054,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://manifest.googlevideo.com/api/manifest/dash/expire/1568231683/ei/o_x4XdfdEpqD8gOOgZqIAw/ip/77.167.21.166/id/c492951469ead0e5/source/youtube/requiressl/yes/playback_host/r5---sn-32o-5hne.googlevideo.com/mm/31%2C26/mn/sn-32o-5hne%2Csn-4g5edn7s/ms/au%2Conr/mv/m/mvi/4/pl/17/hfr/all/as/fmp4_audio_clear%2Cwebm_audio_clear%2Cwebm2_audio_clear%2Cfmp4_sd_hd_clear%2Cwebm2_sd_hd_clear/gcr/nl/initcwndbps/1768750/mt/1568209960/fvip/5/itag/0/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cas%2Cgcr%2Citag/sig/ALgxI2wwRAIgCS29IKbNQZ44nhKygVGrQMaz_hpgDHSWELTtEnvRdLwCIEoOZ5Zc4OeVuCaRHSjys-fR6hpwOQ6HWALgcnNaaGVJ/lsparams/playback_host%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps/lsig/AHylml4wRQIgDmRpVP8pWtChPz94Z4Z1f7LDP-B-2wgfGs6xIBc3AHgCIQDxRqX75A7cJBcTTZnwZyfsrE2MrYr5vIUcv4f-p-VAtg%3D%3D
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -6217,7 +6217,6 @@ MonoBehaviour:
   videoPlayer: {fileID: 1760488374}
   comments: {fileID: 2077493873}
   memes: {fileID: 2139779729}
-  commandCheckTime: 2
   text: {fileID: 701195368}
   fonts:
   - {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6658,6 +6657,50 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1820391171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1820391173}
+  - component: {fileID: 1820391172}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1820391172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820391171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fead6fe79a6cc247bc466b801e0839c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  URL: https://manifest.googlevideo.com/api/manifest/dash/expire/1568232029/ei/_f14XbDiEIuC1wLY37ygBw/ip/77.167.21.166/id/c492951469ead0e5/source/youtube/requiressl/yes/playback_host/r5---sn-32o-5hne.googlevideo.com/mm/31%2C26/mn/sn-32o-5hne%2Csn-4g5e6nle/ms/au%2Conr/mv/m/mvi/4/pl/17/tx/23813091/txs/23813091%2C23813092%2C23813093%2C23813094%2C23825926%2C23825927%2C23825928/hfr/all/as/fmp4_audio_clear%2Cwebm_audio_clear%2Cwebm2_audio_clear%2Cfmp4_sd_hd_clear%2Cwebm2_sd_hd_clear/gcr/nl/initcwndbps/1743750/mt/1568210321/fvip/5/itag/0/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Ctx%2Ctxs%2Chfr%2Cas%2Cgcr%2Citag/sig/ALgxI2wwRAIgbx5gH1GoR2DjysXhKSnFFsPdedrWZzCzq3z_b8a71AgCICaaO4MLyMi7CeCX_SQxQwXbOze4E-5M0_fPapt3UJ66/lsparams/playback_host%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps/lsig/AHylml4wRQIgQO2Ary3lx4KNVvzo-7IVLw_y12l3U8Ddgb_zV8_8M5cCIQDGSxG9gQ_EvzbKTNjjxLIB3lfJ1SS5HiBqL2Y8iju2-g%3D%3D
+--- !u!4 &1820391173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820391171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.64374936, y: -0.3513143, z: -0.05894184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1932499968
 GameObject:
   m_ObjectHideFlags: 0

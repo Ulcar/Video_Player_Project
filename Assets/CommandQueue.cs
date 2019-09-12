@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Newtonsoft.Json;
 using TMPro;
+using System.Net;
+using System.Net.Http;
+using UnityEngine.Networking;
 public class CommandQueue:MonoBehaviour
     {
 
@@ -31,6 +34,7 @@ public class CommandQueue:MonoBehaviour
 
     [SerializeField]
     List<TMP_FontAsset> fonts = new List<TMP_FontAsset>();
+    HttpClient webClient;
 
 
     private void Start()
@@ -69,6 +73,47 @@ public class CommandQueue:MonoBehaviour
     {
         votedUserCount = 0;
         votedUsers.Clear();
+    }
+
+
+    ContentType CheckHeaderInfo(string URL)
+    {
+
+        UnityWebRequest www = UnityWebRequest.Head(URL);
+        www.SendWebRequest();
+        if (www.isNetworkError || www.isHttpError)
+        {
+            return ContentType.Invaild;
+        }
+        while (!www.isDone) { }
+
+        if (www.GetResponseHeader("Content-Type").StartsWith("image"))
+        {
+
+            if (www.GetResponseHeader("Content-Type").Contains("gif"))
+            {
+                return ContentType.Gif;
+            }
+
+            return ContentType.Image;
+        }
+
+        else if (www.GetResponseHeader("Content-Type").StartsWith("video"))
+        {
+            return ContentType.Video;
+        }
+
+        else if (www.GetResponseHeader("Content-Type").StartsWith("text"))
+        {
+           
+            return ContentType.Text;
+        }
+
+        else
+        {
+            return ContentType.Invaild;
+        }
+
     }
 
 
@@ -116,14 +161,36 @@ public class CommandQueue:MonoBehaviour
 
         string filterInput = input.ToLower();
 
-        if (input.Contains("youtube.com") || input.Contains("youtu.be"))
+
+        if (Uri.IsWellFormedUriString(input, UriKind.Absolute))
         {
-            videoPlayer.AddYoutubeVideo(input);
+            ContentType content = CheckHeaderInfo(input);
+            Debug.Log(content);
+            switch (content)
+            {
+                case ContentType.Image:
+
+                    memes.PostImage(input);
+
+
+
+                    break;
+                case ContentType.Gif:
+                    memes.PostGif(input);
+                    break;
+                case ContentType.Video:
+                    videoPlayer.AddWebm(input);
+                    break;
+                case ContentType.Text:
+                    // attempt Youtube-dl Shit
+                    //TODO: Put Youtube-dl on a server, and get link data from there
+                    YoutubeDLCaller.GetLinks(input);
+                    break;
+
+            }
         }
-        else if (filterInput.EndsWith(".webm") || filterInput.EndsWith(".mp4"))
-        {
-            videoPlayer.AddWebm(input);
-        }
+
+
 
         else if (input.Contains("218"))
         {
@@ -132,15 +199,7 @@ public class CommandQueue:MonoBehaviour
             Comment(input);
         }
 
-        else if (filterInput.EndsWith(".png") || filterInput.EndsWith(".jpg"))
-        {
-            memes.PostImage(input);
-        }
-
-        else if (input.EndsWith(".gif") || input.EndsWith(".gifv"))
-        {
-            memes.PostGif(input);
-        }
+     
 
         else if (filterInput.StartsWith("changefont"))
         {
@@ -199,4 +258,14 @@ public class Command
     }
   public  CommandType command;
   public  string data;
+}
+
+
+public enum ContentType
+{
+    Image,
+    Gif,
+    Video,
+    Text,
+    Invaild
 }
